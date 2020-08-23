@@ -16,6 +16,10 @@ class MainVC: UIViewController {
     @IBOutlet weak var priceTxt: CurrencyTxtField!
     
     
+    @IBOutlet weak var resultLbl: UILabel!
+    
+    @IBOutlet weak var hoursLbl: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,13 +32,38 @@ class MainVC: UIViewController {
         
         wageTxt.inputAccessoryView = calcBtn //This sets the calcBtn as the accessory view for the 2 text fields.
         priceTxt.inputAccessoryView = calcBtn
+        
+        resultLbl.isHidden = true//Starting out with the labels hidden in viewDidLoad.
+        hoursLbl.isHidden = true
     }
     
     @objc func calculate() { //@objc means its using an Objective-C feature.
         
-        print("We got here!")
+        if let wageTxt = wageTxt.text, let priceTxt = priceTxt.text {//Here we can use wageTxt and priceTxt as variable names as we are redefining it with let. It is applicable only for this function so not to worry.
+            
+            //The if statement also checks if the text fields are actually filled with data. So the calculate() func will not work if there is no data in the text fields.
+            if let wage = Double(wageTxt), let price = Double(priceTxt) {//Here we are casting the data entered in the text fields into a number. If there are letters instead of numbers then this function won't work.
+                
+                view.endEditing(true) //This hides the keyboard.
+                resultLbl.isHidden = false//These 2 unhide the labels that were hidden by default.
+                hoursLbl.isHidden = false
+                resultLbl.text = "\(Wage.getHours(forWage: wage, andPrice: price))" //Resetting the default label values with the calculation result from the Wage.swift class in Model group.
+                
+                
+            }
+            
+            
+        }
     }
 
-
+    @IBAction func clearCalculatorPressed(_ sender: Any) {
+        
+        resultLbl.isHidden = true//We are hiding the labels with the .isHidden function.
+        hoursLbl.isHidden = true
+        wageTxt.text = ""//Making the text empty.
+        priceTxt.text = ""
+        
+    }
+    
 }
 

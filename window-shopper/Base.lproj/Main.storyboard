@@ -21,7 +21,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="windowShopperIcon" translatesAutoresizingMaskIntoConstraints="NO" id="55Z-We-XtO">
                                 <rect key="frame" x="140" y="104" width="134" height="134"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="134" id="LqY-Xm-F4z"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="134" id="LqY-Xm-F4z"/>
                                     <constraint firstAttribute="height" constant="134" id="RyB-N9-IrO"/>
                                 </constraints>
                             </imageView>
@@ -44,18 +44,54 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="32" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vIl-Kz-s8w">
+                                <rect key="frame" x="38" y="453" width="338" height="102.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="75"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pzn-yl-6f0">
+                                <rect key="frame" x="159.5" y="565.5" width="95" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="L3f-b0-Si9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXj-xB-czo">
+                                <rect key="frame" x="25" y="799" width="369" height="63"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="EjR-uT-5YV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="30"/>
+                                <state key="normal" title="Clear Calculator">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="clearCalculatorPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8VC-KH-ccM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="55Z-We-XtO" secondAttribute="trailing" constant="140" id="48G-bj-rJH"/>
                             <constraint firstItem="0UZ-IZ-Yl8" firstAttribute="top" secondItem="Gu9-Nn-GtF" secondAttribute="bottom" constant="45" id="Baq-Sx-tnP"/>
                             <constraint firstItem="Gu9-Nn-GtF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="38" id="DD7-JK-pu9"/>
+                            <constraint firstItem="cXj-xB-czo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="GSF-4e-io0"/>
+                            <constraint firstItem="pzn-yl-6f0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GWG-HF-wTU"/>
                             <constraint firstItem="55Z-We-XtO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="140" id="KUo-Nx-Ed2"/>
                             <constraint firstItem="0UZ-IZ-Yl8" firstAttribute="trailing" secondItem="Gu9-Nn-GtF" secondAttribute="trailing" id="VdK-OW-EP1"/>
+                            <constraint firstItem="vIl-Kz-s8w" firstAttribute="top" secondItem="0UZ-IZ-Yl8" secondAttribute="bottom" constant="50" id="WxK-fP-GBG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Gu9-Nn-GtF" secondAttribute="trailing" constant="38" id="Z4a-E5-XU3"/>
+                            <constraint firstItem="cXj-xB-czo" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Z9O-gf-G0r"/>
+                            <constraint firstItem="vIl-Kz-s8w" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bQ0-xz-yvX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cXj-xB-czo" secondAttribute="trailing" constant="20" id="bzf-cx-feH"/>
                             <constraint firstAttribute="bottom" secondItem="xdP-VL-yCc" secondAttribute="bottom" id="fOm-4X-yXY"/>
                             <constraint firstItem="0UZ-IZ-Yl8" firstAttribute="leading" secondItem="Gu9-Nn-GtF" secondAttribute="leading" id="i1T-JD-DPo"/>
                             <constraint firstItem="Gu9-Nn-GtF" firstAttribute="top" secondItem="55Z-We-XtO" secondAttribute="bottom" constant="40" id="i1p-4E-jgr"/>
+                            <constraint firstItem="pzn-yl-6f0" firstAttribute="top" secondItem="vIl-Kz-s8w" secondAttribute="bottom" constant="10" id="jdG-0P-wVO"/>
+                            <constraint firstItem="vIl-Kz-s8w" firstAttribute="width" secondItem="0UZ-IZ-Yl8" secondAttribute="width" id="m42-GO-qN4"/>
                             <constraint firstAttribute="trailing" secondItem="xdP-VL-yCc" secondAttribute="trailing" id="pQV-Oj-MYb"/>
                             <constraint firstItem="55Z-We-XtO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="tdq-m2-qNg"/>
                             <constraint firstItem="xdP-VL-yCc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vrc-s5-fNo"/>
@@ -64,7 +100,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="hoursLbl" destination="pzn-yl-6f0" id="C0x-kZ-M9C"/>
                         <outlet property="priceTxt" destination="0UZ-IZ-Yl8" id="trf-6c-Opc"/>
+                        <outlet property="resultLbl" destination="vIl-Kz-s8w" id="TYM-48-nqX"/>
                         <outlet property="wageTxt" destination="Gu9-Nn-GtF" id="kDW-KU-M3x"/>
                     </connections>
                 </viewController>
