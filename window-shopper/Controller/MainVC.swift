@@ -37,6 +37,9 @@ class MainVC: UIViewController {
         hoursLbl.isHidden = true
     }
     
+    
+    
+    
     @objc func calculate() { //@objc means its using an Objective-C feature.
         
         if let wageTxt = wageTxt.text, let priceTxt = priceTxt.text {//Here we can use wageTxt and priceTxt as variable names as we are redefining it with let. It is applicable only for this function so not to worry.
